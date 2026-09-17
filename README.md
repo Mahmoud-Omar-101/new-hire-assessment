@@ -35,12 +35,29 @@ Build a small pipeline that, for each company in [`seed_companies.md`](seed_comp
    company?* Follow ownership chains where they exist (company A owned by
    company B owned by person C), and explicitly flag any case that's
    unresolved, ambiguous, missing data, or circular — don't silently drop or
-   guess at these.
+   guess at these. Make this answer queryable: a table or view in your
+   database (or an exported file, if you prefer one) with one row per seed
+   company, including at minimum the resolved Wikidata entity, the ultimate
+   owner (name and type — person, company, or state/government), and a status
+   flag (`resolved` / `ambiguous` / `missing_data` / `circular` / `unresolved`).
+
+## Getting started
+
+1. `docker compose up -d` starts a local Postgres (see
+   [`docker-compose.yml`](docker-compose.yml) for credentials — user/db
+   `jassas`/`assessment`, password `jassas`, port `5432`).
+2. Bring your own language/runtime for the ingestion and modeling code —
+   nothing else is provided or required.
 
 ## Constraints
 
 - Hit the **live** Wikidata API/SPARQL endpoint at runtime. Don't bundle a
   static snapshot of the data as a shortcut.
+- Send a descriptive `User-Agent` header identifying your client on every
+  request. This follows [Wikimedia's API usage policy](https://meta.wikimedia.org/wiki/User-Agent_policy)
+  — requests without one can be silently throttled or blocked, which will
+  look like a broken task if you don't know to expect it. It's a couple of
+  lines to add, not something to design around.
 - Load your modeled data into a real database. Postgres is preferred (a
   starter [`docker-compose.yml`](docker-compose.yml) is included); SQLite is
   acceptable if that's easier for you to run locally.
