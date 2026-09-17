@@ -53,10 +53,9 @@ Build a small pipeline that, for each company in [`seed_companies.md`](seed_comp
 ## What to hand back
 
 - Your code, in your own fork (see **Submission** below).
-- A short `SOLUTION.md` covering: how to run it, the assumptions you made,
-  the edge cases you actually hit (missing data, ambiguous matches, rate
-  limits, anything else) and how you handled them, and what you'd improve
-  with more time.
+- A filled-in [`SOLUTION.md`](SOLUTION.md) — a template with the sections we
+  care about is already in this repo. Use it as a starting point; reshape it
+  if a different structure fits your solution better, but keep the substance.
 
 There's no fixed format for the code itself — structure it however you'd
 structure a real project.
@@ -71,7 +70,7 @@ own time, not an expectation you'll spend the whole week on it.
 
 1. Fork this repository to your own GitHub account.
 2. Do your work in your fork, on any branch you like.
-3. When you're ready, send Mona/Mahmoud the link to **your fork** directly.
+3. When you're ready, send Mahmoud the link to **your fork** directly.
    Please don't open a pull request against this template repository — we'd
    rather other candidates not be able to see your solution (or you, theirs).
 
