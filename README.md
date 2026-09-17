@@ -71,7 +71,7 @@ own time, not an expectation you'll spend the whole week on it.
 
 1. Fork this repository to your own GitHub account.
 2. Do your work in your fork, on any branch you like.
-3. When you're ready, send Mahmoud the link to **your fork** directly.
+3. When you're ready, send Mona/Mahmoud the link to **your fork** directly.
    Please don't open a pull request against this template repository — we'd
    rather other candidates not be able to see your solution (or you, theirs).
 
