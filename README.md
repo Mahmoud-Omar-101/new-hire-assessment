@@ -35,11 +35,17 @@ Build a small pipeline that, for each company in [`seed_companies.md`](seed_comp
    company?* Follow ownership chains where they exist (company A owned by
    company B owned by person C), and explicitly flag any case that's
    unresolved, ambiguous, missing data, or circular — don't silently drop or
-   guess at these. Make this answer queryable: a table or view in your
+   guess at these. Several of these companies are widely-held public
+   companies with no single controlling shareholder — that's a real, expected
+   outcome, not a failure: report the largest identifiable owner(s) you can
+   find (with stake/percentage if the data has it) and mark the status as
+   `distributed_ownership` rather than forcing a single person or company at
+   the end of the chain. Make this answer queryable: a table or view in your
    database (or an exported file, if you prefer one) with one row per seed
    company, including at minimum the resolved Wikidata entity, the ultimate
-   owner (name and type — person, company, or state/government), and a status
-   flag (`resolved` / `ambiguous` / `missing_data` / `circular` / `unresolved`).
+   owner (name and type — person, company, state/government, or distributed),
+   and a status flag (`resolved` / `distributed_ownership` / `ambiguous` /
+   `missing_data` / `circular` / `unresolved`).
 
 ## Getting started
 
